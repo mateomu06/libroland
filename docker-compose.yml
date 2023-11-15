@@ -1,0 +1,40 @@
+version: '3.8'
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile.api
+    networks:
+      mynetwork:
+        ipv4_address: "172.18.0.2"  # Dirección IP para el servicio 'api'
+        aliases:
+          - api
+    ports:
+      - "5000:5000"
+
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile.web
+    networks:
+      mynetwork:
+        ipv4_address: "172.18.0.3"  # Dirección IP para el servicio 'web'
+        aliases:
+          - web
+    ports:
+      - "80:80"
+    depends_on:
+      - api
+
+networks:
+  mynetwork:
+    ipam:
+      config:
+        - subnet: "172.18.0.0/16"
+
+
+
+
+
+
