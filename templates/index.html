@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <title>Buscador de Libros</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles/styles.css') }}"
+    />
+  </head>
+
+  <body>
+    <header>
+      <div class="name">
+        <h1>LibroLand</h1>
+      </div>
+    </header>
+    <main>
+      <form method="POST">
+        <label for="q">Buscar libros:</label>
+        <input type="text" id="q" name="q" placeholder="Título" />
+        <button type="submit">Buscar</button>
+      </form>
+      <section>
+        <h1>Resultados de búsqueda</h1>
+        <ul class="book-grid">
+          {% for libro in libros %}
+          <li>
+            <article>
+              <div class="book-cover">
+                <img src="{{ libro.portada }}" alt="{{ libro.titulo }}" />
+              </div>
+              <div class="book-details">
+                <h2>{{ libro.titulo }}</h2>
+                <p>Autor: {{ libro.autor }}</p>
+                <p>{{ libro.resumen }}</p>
+                <a href="{{ libro.url }}" class="ver-button" target="_blank"
+                  >Ver</a
+                >
+              </div>
+            </article>
+          </li>
+          {% endfor %}
+        </ul>
+      </section>
+    </main>
+  </body>
+</html>
