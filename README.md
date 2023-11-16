@@ -29,11 +29,11 @@ Se utiliza `docker-compose.yml` para configurar servicios. Los servicios compart
 #### Pasos de Instalación
 1. Clona el repositorio:
    ```bash
-   git clone https://www.github.com/<usuario>/libroland
+   git clone https://www.github.com/mateomu06/libroland
    cd libroland
     ```
 2. Levanta los servicios con Docker Compose (requiere permisos de administrador):
     ```bash
     docker-compose up -d --build
     ```
-3. Accede a la interfaz web en http://localhost:80 
+3. Accede a la interfaz web en http://localhost:80
