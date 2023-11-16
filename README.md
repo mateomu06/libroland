@@ -29,8 +29,8 @@ Se utiliza `docker-compose.yml` para configurar servicios. Los servicios compart
 #### Pasos de Instalación
 1. Clona el repositorio:
    ```bash
-   git clone https://tu-repositorio.com/api-libros.git
-   cd api-libros
+   git clone https://www.github.com/<usuario>/libroland
+   cd libroland
     ```
 2. Levanta los servicios con Docker Compose (requiere permisos de administrador):
     ```bash
